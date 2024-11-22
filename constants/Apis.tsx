@@ -3,7 +3,7 @@ import * as SecureStore from "expo-secure-store";
 import { CurrencyData } from "./CurrencyData";
 import CountryList from "./countries.json";
 
-const API_KEY = "f7930de7d887b5b25883efde";
+const API_KEY = "7a16042f854ec3d029286779";
 const BASE_URL = "https://v6.exchangerate-api.com/v6";
 
 export const fetchExchangeRates = async (baseCurrency: string) => {

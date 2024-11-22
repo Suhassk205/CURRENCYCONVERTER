@@ -10,7 +10,14 @@ This is an [Expo](https://expo.dev) project created with [`create-expo-app`](htt
    npm install
    ```
 
-2. Start the app
+2. Install Axios or Fetch API (Optional)
+   You can use the built-in fetch API or install axios for handling HTTP requests. If you'd like to use axios, install it with:
+
+   ```bash
+   npm install axios   
+   ```
+
+3. Start the app
 
    ```bash
     npx expo start
