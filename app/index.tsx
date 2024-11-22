@@ -8,6 +8,7 @@ import CurrencyPicker from "@/components/CurrencyPicker";
 import CurrencyInput from "@/components/CurrencyInput";
 import ErrorComponent from "@/components/ErrorComponent";
 
+
 interface ConversionState {
   fromCurrency: string;
   toCurrency: string;
@@ -190,72 +191,97 @@ const CurrencyConverter = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#2c3e50",
+    backgroundColor: "silver", 
+  },
+  content: {
+    flex: 1,
     alignItems: "center",
     justifyContent: "center",
     paddingHorizontal: 20,
-},
-title: {
+  },
+  title: {
     fontSize: 32,
     fontWeight: "800",
     marginBottom: 25,
-    color: "#ecf0f1",
-},
-converterContainer: {
+    color: "343a40", 
+    textShadowColor: 'rgba(0, 0, 0, 0.2)', 
+    textShadowOffset: { width: 1, height: 1 },
+    textShadowRadius: 2,
+    textAlign: "center",
+    paddingTop: 10,
+  },
+  converterContainer: {
     width: "100%",
-    backgroundColor: "#34495e",
+    backgroundColor: "#ecf0f1", 
     borderRadius: 20,
     padding: 25,
-    shadowColor: "#000",
+    shadowColor: "#000", 
     shadowOffset: { width: 0, height: 4 },
     shadowOpacity: 0.2,
     shadowRadius: 8,
     elevation: 6,
-},
-inputContainer: {
-    marginBottom: 20,
-},
-label: {
-    fontSize: 18,
-    fontWeight: "700",
+  },
+  labelContainer: {
     marginBottom: 10,
-    color: "white",
-},
-picker: {
+  },
+  labelHeading: {
+    fontSize: 24,
+    fontWeight: "800",
+    color: "#3498db", 
+    textShadowColor: 'rgba(0, 0, 0, 0.2)', 
+    textShadowOffset: { width: 1, height: 1 },
+    textShadowRadius: 2,
+  },
+  pickerContainer: {
+    marginBottom: 15,
+    backgroundColor: "#2c3e50", 
+    borderRadius: 12,
+    borderWidth: 2,
+    borderColor: "#3498db", 
+    overflow: 'hidden'
+  },
+  picker: {
     height: 55,
     width: "100%",
-    marginBottom: 12,
-    backgroundColor: "#2c3e50",
-    borderRadius: 12,
-},
-input: {
+    color: "#ecf0f1", 
+  },
+  inputContainer: {
+    marginBottom: 15,
+  },
+  resultContainer: {
+    marginTop: 5,
+  },
+  input: {
     height: 55,
-    borderColor: "#3498db",
+    borderColor: "#3498db", 
     borderWidth: 2,
     borderRadius: 12,
     paddingHorizontal: 15,
     fontSize: 18,
-    backgroundColor: "#2c3e50",
-},
-resultInput: {
-    backgroundColor: "#2c3e50",
-    color: "#e74c3c",
-},
-swapButton: {
+    backgroundColor: "#2c3e50", 
+    color: "#ecf0f1", 
+  },
+  resultInput: {
+    backgroundColor: "#2c3e50", 
+    color: "#e74c3c", 
+    fontWeight: "700",
+  },
+  swapButton: {
     alignSelf: "center",
-    backgroundColor: "#415b76",
+    backgroundColor: "#ecf0f1", 
     borderRadius: 30,
     width: 60,
     height: 60,
     justifyContent: "center",
     alignItems: "center",
     marginVertical: 15,
-    shadowColor: "#000",
+    shadowColor: "#000", 
     shadowOffset: { width: 0, height: 4 },
     shadowOpacity: 0.25,
     shadowRadius: 6,
     elevation: 6,
-},
+  },
+  
 });
 
 export default CurrencyConverter;
