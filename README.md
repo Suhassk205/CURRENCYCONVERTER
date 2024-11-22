@@ -31,6 +31,10 @@ In the output, you'll find options to open the app in a
 - [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
 
 You can go ahead and scan the QR code in Expo go mobile application
-```
+
+## Screenshots
+
+![Screenshot1](assets/images/scr1.jpg)
+![Screenshot2](assets/images/scr2.jpg)
 
 
