@@ -16,6 +16,12 @@ This is an [Expo](https://expo.dev) project created with [`create-expo-app`](htt
     npx expo start
    ```
 
+ 3. Start the app
+
+   ```bash
+    npx expo start
+   ```   
+
 In the output, you'll find options to open the app in a
 
 - [development build](https://docs.expo.dev/develop/development-builds/introduction/)
@@ -25,13 +31,9 @@ In the output, you'll find options to open the app in a
 
 You can go ahead and scan the QR code in Expo go mobile application
 
-## Get a fresh project
+##Screenshots
 
-When you're ready, run:
 
-```bash
-npm run reset-project
-```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+
 
