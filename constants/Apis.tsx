@@ -36,8 +36,3 @@ export const fetchExchangeRates = async (baseCurrency: string) => {
     throw error;
   }
 };
-
-export const getAllCurrencies = (): CurrencyData[] => {
-  // Comprehensive list of currencies
-  return CountryList;
-};

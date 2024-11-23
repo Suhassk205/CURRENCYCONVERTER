@@ -8,7 +8,6 @@ import CurrencyPicker from "@/components/CurrencyPicker";
 import CurrencyInput from "@/components/CurrencyInput";
 import ErrorComponent from "@/components/ErrorComponent";
 
-
 interface ConversionState {
   fromCurrency: string;
   toCurrency: string;
@@ -158,9 +157,8 @@ const CurrencyConverter = () => {
         <TouchableOpacity
           style={styles.swapButton}
           onPress={handleSwapCurrencies}
-          activeOpacity={0.8}
         >
-          <MaterialIcons name="swap-vert" size={24} color="#888" />
+          <MaterialIcons name="swap-vert" size={32} color="#fff" />
         </TouchableOpacity>
 
         <CurrencyPicker
@@ -173,12 +171,7 @@ const CurrencyConverter = () => {
 
         <CurrencyInput
           amount={amount}
-          onAmountChange={(text) =>
-            dispatch({
-              type: "SET_AMOUNT",
-              payload: text.replace(/[^0-9]/g, ""),
-            })
-          }
+          onAmountChange={convertCurrency}
           convertedAmount={convertedAmount}
         />
 
@@ -191,7 +184,8 @@ const CurrencyConverter = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "silver", 
+    backgroundColor: "#222",
+    paddingBlock: 64,
   },
   content: {
     flex: 1,
@@ -201,21 +195,21 @@ const styles = StyleSheet.create({
   },
   title: {
     fontSize: 32,
+    flexGrow: 1,
     fontWeight: "800",
     marginBottom: 25,
-    color: "343a40", 
-    textShadowColor: 'rgba(0, 0, 0, 0.2)', 
+    color: "#ff9800",
+    textShadowColor: "rgba(0, 0, 0, 0.2)",
     textShadowOffset: { width: 1, height: 1 },
     textShadowRadius: 2,
     textAlign: "center",
-    paddingTop: 10,
   },
   converterContainer: {
     width: "100%",
-    backgroundColor: "#ecf0f1", 
+    backgroundColor: "#444",
     borderRadius: 20,
     padding: 25,
-    shadowColor: "#000", 
+    shadowColor: "#000",
     shadowOffset: { width: 0, height: 4 },
     shadowOpacity: 0.2,
     shadowRadius: 8,
@@ -227,23 +221,23 @@ const styles = StyleSheet.create({
   labelHeading: {
     fontSize: 24,
     fontWeight: "800",
-    color: "#3498db", 
-    textShadowColor: 'rgba(0, 0, 0, 0.2)', 
+    color: "#3498db",
+    textShadowColor: "rgba(0, 0, 0, 0.2)",
     textShadowOffset: { width: 1, height: 1 },
     textShadowRadius: 2,
   },
   pickerContainer: {
     marginBottom: 15,
-    backgroundColor: "#2c3e50", 
+    backgroundColor: "#2c3e50",
     borderRadius: 12,
     borderWidth: 2,
-    borderColor: "#3498db", 
-    overflow: 'hidden'
+    borderColor: "#3498db",
+    overflow: "hidden",
   },
   picker: {
     height: 55,
     width: "100%",
-    color: "#ecf0f1", 
+    color: "#ecf0f1",
   },
   inputContainer: {
     marginBottom: 15,
@@ -253,29 +247,29 @@ const styles = StyleSheet.create({
   },
   input: {
     height: 55,
-    borderColor: "#3498db", 
+    borderColor: "#3498db",
     borderWidth: 2,
     borderRadius: 12,
     paddingHorizontal: 15,
     fontSize: 18,
-    backgroundColor: "#2c3e50", 
-    color: "#ecf0f1", 
+    backgroundColor: "#2c3e50",
+    color: "#ecf0f1",
   },
   resultInput: {
-    backgroundColor: "#2c3e50", 
-    color: "#e74c3c", 
+    backgroundColor: "#2c3e50",
+    color: "#e74c3c",
     fontWeight: "700",
   },
   swapButton: {
     alignSelf: "center",
-    backgroundColor: "#ecf0f1", 
+    backgroundColor: "#ff9800",
     borderRadius: 30,
     width: 60,
     height: 60,
     justifyContent: "center",
     alignItems: "center",
     marginVertical: 15,
-    shadowColor: "#000", 
+    shadowColor: "#000",
     shadowOffset: { width: 0, height: 4 },
     shadowOpacity: 0.25,
     shadowRadius: 6,

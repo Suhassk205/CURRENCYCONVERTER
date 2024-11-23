@@ -1,7 +1,7 @@
 import React from "react";
 import { View, Text, StyleSheet } from "react-native";
 import { Picker } from "@react-native-picker/picker";
-
+import AllCountry from "../constants/countries.json";
 interface CurrencyPickerProps {
   label: string;
   selectedValue: string;
@@ -21,14 +21,13 @@ const CurrencyPicker: React.FC<CurrencyPickerProps> = ({
         selectedValue={selectedValue}
         onValueChange={onValueChange}
       >
-        <Picker.Item label="US Dollar (USD)" value="USD" />
-        <Picker.Item label="Euro (EUR)" value="EUR" />
-        <Picker.Item label="Japanese Yen (JPY)" value="JPY" />
-        <Picker.Item label="Pound Sterling (GBP)" value="GBP" />
-        <Picker.Item label="Australian Dollar (AUD)" value="AUD" />
-        <Picker.Item label="Canadian Dollar (CAD)" value="CAD" />
-        <Picker.Item label="Swiss Franc (CHF)" value="CHF" />
-        <Picker.Item label="Chinese Yuan (CNY)" value="CNY" />
+        {AllCountry.map((country) => (
+          <Picker.Item
+            key={country.value}
+            label={`${country.value} - ${country.label}`}
+            value={country.value}
+          />
+        ))}
       </Picker>
     </View>
   );
@@ -42,7 +41,7 @@ const styles = StyleSheet.create({
     fontSize: 16,
     fontWeight: "600",
     marginBottom: 8,
-    color: "#666",
+    color: "#ddd",
   },
   picker: {
     height: 50,
